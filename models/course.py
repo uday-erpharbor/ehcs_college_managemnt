@@ -5,7 +5,7 @@ class Bca(models.Model):
 	_name ="course.course"
 	_description = "Bca information"
 
-	name = fields.Char()
+	name = fields.Char(string="Name")
 	
 
 
