@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="report_student" model="ir.actions.report">
+            <field name="name">Student ID Card</field>
+            <field name="model">college.student</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">college_management.report_studentt</field>
+            <field name="report_file">college_management.report_studentt</field>
+            <field name="binding_model_id" ref="model_college_student"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+
+    <data>
+        <record id="report_sport_form" model="ir.actions.report">
+            <field name="name">Student Sport Report</field>
+            <field name="model">sport.sport</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">college_management.report_sportt</field>
+            <field name="report_file">college_management.report_sportt</field>
+            <field name="binding_model_id" ref="model_sport_sport"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+     <data>
+        <record id="report_sport_excel_form" model="ir.actions.report">
+            <field name="name">Sport Excel Report</field>
+            <field name="model">sport.sport</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">college_management.sport_excel_report</field>
+            <field name="report_file">college_management.sport_excel_report</field>
+            <field name="binding_model_id" ref="model_sport_sport"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+
+    <data>
+        <record id="teacher_salary_form" model="ir.actions.report">
+            <field name="name">Teacher Salary</field>
+            <field name="model">salary.salary</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">college_management.teacher_salary</field>
+            <field name="report_file">college_management.teacher_salary</field>
+            <field name="binding_model_id" ref="model_salary_salary"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+
+    <data>
+        <record id="student_excel_report" model="ir.actions.report">
+            <field name="name">Student Excel Report</field>
+            <field name="model">college.student</field>
+            <field name="report_type">xlsx</field>
+            <field name="report_name">college_management.student_excel</field>
+            <field name="report_file">college_management.student_excel</field>
+             <field name="binding_model_id" ref="model_college_student"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+
+    
+
+</odoo>

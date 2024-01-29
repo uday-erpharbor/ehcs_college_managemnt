@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <template id="report_sportt">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <t t-if="o.form_ids">
+                        <span>Student Information</span>
+                        <table class="table table-sm o_main_table" name="Sport">
+                            <thead>
+                                <tr>
+                                    <th name="th_count" class="text-left">
+                                        <span>No</span>
+                                    </th>
+                                    <th name="th_name" class="text-left">
+                                        <span>Name</span>
+                                    </th>
+                                    <th name="th_gender" class="text-left">
+                                        <span>Gender</span>
+                                    </th>
+                                    <th name="th_city" class="text-left">
+                                        <span>City</span>
+                                    </th>
+                                    <th name="th_city" class="text-left">
+                                        <span>Height</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <t t-set="count" t-value="1"/>
+                            <t t-foreach="o.form_ids.filtered(lambda course:course.handicap == True)" t-as="line">                               
+                                <tr>
+                                    <td>
+                                        <center>
+                                            <span t-esc="count"/> 
+                                            <t t-set="count" t-value="count + 1"/>
+                                        </center>
+                                    </td>
+                                    <td><center>
+                                        <span t-field="line.name"/></center>
+                                    </td>
+                                    <td><center>
+                                        <span t-field="line.gender"/></center>
+                                    </td>
+                                    <td><center>
+                                        <span t-field="line.city"/></center>
+                                    </td>
+                                    <td><center>
+                                        <span t-esc="sum(line.mapped('height'))"/></center>
+                                    </td>
+                                </tr>
+                            </t>
+                            
+
+                        </table>
+                    </t>
+                </t>
+            </t>
+        </template>
+</odoo>

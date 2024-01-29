@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <template id="teacher_salary">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="o">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th name="th_name" class="text-lext" colspan='2'>
+                                <h1>
+                                    <span>Shree P.K.M College Junagadh</span>
+                                </h1>
+                                <h5>
+                                    Bhutnath Road,Near Motibag circul,junagadh-362001
+                                </h5>
+                            </th>
+                        </tr>
+                    
+                        <tr>
+                            <th name="th_name" class="text-lext" colspan='2'>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <h2>
+                                    <span>Teacher Salary Sleep</span>
+                                </h2>
+                            </th>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered mb64">
+                        <tr>
+                            <td>
+                                <span>  
+                                    <strong>Name</strong>                      
+                                </span>
+                            </td>
+                            <td>
+                                <span t-field="o.name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>  
+                                     <strong>Working Day's</strong>                      
+                                </span>
+                            </td>
+                            <td>
+                                <span t-field="o.work_duration"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>  
+                                    <strong>Leave's Day</strong>                      
+                                </span>
+                            </td>
+                            <td>
+                                <span t-field="o.leave"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>  
+                                    <strong>Salary Amount</strong>                      
+                                </span>
+                            </td>
+                            <td>
+                                <span t-field="o.salary"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <table  class="table-borderless">
+                        <tr>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br><br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <h4>
+                               Note:
+                            </h4>
+                            ------------------------------------------------------------------------------------
+                        <br></br>
+                            This Sleep is Proof That Our Institute Have pay You'r Salary.
+                        <br></br>
+                            Don't Sher This Sleep to Another Institute.
+                        <br></br>
+                            If Any Type Of Miscalculation Contact Our Office.
+                        <br></br>
+                            Tankyou.
+                        </tr>
+                    </table>
+                </t>
+            </t>
+        </template>
+</odoo>

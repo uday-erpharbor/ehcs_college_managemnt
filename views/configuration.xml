@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+	<record id="configuraton_action" model="ir.actions.act_window">
+		<field name="name">Configuration</field>
+		<field name="res_model">configuration.configuration</field>
+	</record>
+
+
+
+	 <menuitem id="configuration_menu" name="Configuration" parent="menu_college" />
+
+	
+</odoo>

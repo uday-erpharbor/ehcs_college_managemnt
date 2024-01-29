@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+	<record id="contact_field_add" model="ir.ui.view">
+		<field name="name">res.partner.inherit</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='vat']" position="after">
+				<field name="is_teacher"/>
+				<field name="is_student"/>
+				<field name="subject_ids" widget="many2many_tags"/>
+				
+			</xpath>
+			<!-- <xpath expr="//field[@name='mobile']" position="attributes">
+    			<attribute name="string">NewLabel</attribute>#use for change field name
+			</xpath> -->
+
+	        <xpath expr="//form/sheet" position="before">
+	        	<header>
+		            <button name="action_update_subject" 
+		            	type="object" 
+		            	class="btn btn-primary" 
+		            	string="Update Subject"/>
+                    <button name="action_remove_subject_database" type="object" string="Remove Subject with Database"/>
+                    <button name="action_remove_subject" type="object" string="Remove Subjects"/>
+                    <button name="action_add_subject" type="object" string="Add Subjects"/>
+                    <button name="action_remove_all_subject" type="object" string="Remove All Subjects"/>
+                   	<button name="action_replace_subject" type="object" string="Replace Subjects"/>
+	            </header>
+	        </xpath>
+
+
+
+
+		</field>
+	</record>
+
+
+
+</odoo>

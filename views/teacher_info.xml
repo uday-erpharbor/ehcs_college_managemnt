@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="teacher_form_view" model="ir.ui.view">
+        <field name="name">teacher.information.form</field>
+        <field name="model">teacher.information</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <header>
+                    <button name="%(college_management.create_subject_wizard_action)d"
+                        string="creat subject" type="action" class="oe_highlight"/>
+                    <button name="create_subject" type="object" string="Subjectt"/>
+                    <button name="demo_1" type="object" string="Demo"/>#not for use
+                </header>
+                <sheet>
+                    <div name="button_box" position="inside">
+                        <button class="oe_stat_button" name="student_smart_button" 
+                                type="object" icon="fa-calendar" string="Student's">
+
+                            <field string="Student's" name="student_count"/>
+                            <span calss="oe_stat_text">_student</span>
+                        </button>
+                    </div>
+                    <group>
+                        <group>
+                           <field name="name" required="1" />
+                           <field name="gender"/> 
+                           <field name="partner" 
+                                  attrs="{ 'invisible': [('gender', '!=','male')]}" />
+
+                           <field name="subject_id" widget="many2many_tags"/>      
+                           <field name="phd"/>
+                           <field name="year" attrs="{ 'invisible': [('phd', '!=',True)] }"/>
+                           <field name="master" />      
+                           <field name="email"/>      
+                        </group>
+                            <field name="progress"  widget="percentpie" />      
+
+                    </group>
+                   
+                </sheet>
+              <!--   <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div> -->
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_tree_view" model="ir.ui.view">
+        <field name="name">teacher.information.tree</field>
+        <field name="model">teacher.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    
+    <record id="action_college_teacher" model="ir.actions.act_window">
+        <field name="name">College Management</field>
+        <field name="res_model">teacher.information</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	
+
+	   
+</odoo>

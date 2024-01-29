@@ -1,0 +1,17 @@
+<odoo>
+    <data >
+        <record id="send_leave_mail" model="mail.template">
+        <field name="name">Student Leave Mail</field>
+        <field name="model_id" ref="model_college_student"/>
+        <field name="subject">Performance of {{object.name}} Student</field>
+        <field name="email_to">{{object.email}}</field>
+        <field name="body_html" type="html">
+            <p>Hello <b><t t-out="object.t_id.name or ''"/></b>, Mam I Am Going to trip For
+            7 Day,So I Will Not Come College</p>
+            
+            <p> Thanks and regards, </p>
+        </field>
+    </record>
+    </data>
+
+</odoo>
