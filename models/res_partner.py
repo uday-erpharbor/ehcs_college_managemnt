@@ -5,7 +5,7 @@ class Contacts(models.Model):
     _inherit = "res.partner"
 
 
-    is_teacher = fields.Boolean("Is Teacher")
+    is_teacher = fields.Boolean(string="Is Teacher")
     is_student = fields.Boolean("Is Student")
     subject_ids = fields.Many2many(comodel_name="college.subject",string="Subject")
 
