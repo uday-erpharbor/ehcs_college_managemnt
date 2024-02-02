@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+	<record id="contact_field_add" model="ir.ui.view">
+		<field name="name">res.partner.inherit</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='vat']" position="after">
+				<field name="is_teacher"/>
+				<field name="is_student"/>
+				<field name="uday"/>
+			</xpath>
+
+			<xpath expr="//field[@name='uday']" position="attributes">
+				<attribute name="string">Mobile</attribute>
+				
+			</xpath>
+		</field>
+	</record>
+
+
+
+</odoo>

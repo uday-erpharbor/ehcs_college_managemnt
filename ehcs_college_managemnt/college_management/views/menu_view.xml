@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<menuitem id="menu_college" name="College management">
+		<menuitem id="menu_school_student" name="Student" action="action_college_student" 
+			sequence="1"/>
+
+		<menuitem id="configuration_menu" name="Configuration">
+		<menuitem id="menu_colllege_subject" name="Subject" action="action_college_subject"/>
+		<menuitem id="menu_course_subject" name="Course" action="bca_action"/>
+		<menuitem id="history_college" name="History Of College" action="action_histoy"/>
+        </menuitem>
+
+		<menuitem id="personal_menu" name="Sport Form" 
+			action="college_management.action_personal_info" sequence="5"/>
+		<menuitem id="sports_menu" name="Sports" action="action_sport" sequence="4"/>
+		<menuitem id="menu_teacher_student" name="Teacher" action="action_college_teacher" 
+			sequence="2"/>
+		<menuitem id="teacher_salary_menu" name="Teacher Salary" action="action_salary"
+			sequence="3" groups="college_management.groups_college_teacher"/>
+
+	</menuitem>
+
+</odoo>

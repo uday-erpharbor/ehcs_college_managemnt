@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+	<record id="sale_amount_add" model="ir.ui.view">
+		<field name="name">sale.orderr.inherit</field>
+		<field name="model">sale.order</field>
+		<field name="inherit_id" ref="sale.view_order_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="amount"  invisible="config == False" />
+				<field name="total_amount" invisible="config == False"/>
+			</xpath>
+			<div>
+				<field name="config"/>
+			</div>
+		</field>
+	</record>
+
+</odoo>

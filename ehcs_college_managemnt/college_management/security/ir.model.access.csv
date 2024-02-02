@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acccess_college_student_admin,acccess.college.student.admin,model_college_student,,1,1,1,1
+acccess_teacher_information,acccess.teacher.information.admin,model_teacher_information,,1,1,1,1
+acccess_about_college,acccess.about.college.admin,model_about_college,,1,1,1,1
+acccess_college_subject_admin,acccess.college.subject.admin,model_college_subject,,1,1,1,1
+acccess_course_course_admin,acccess.course.course.admin,model_course_course,,1,1,1,1
+
+acccess_sport_sport_admin,acccess.sport.sport.admin,model_sport_sport,,1,1,1,1
+
+
+acccess_sport_form_admin,acccess.sport_form.admin,model_sport_form,,1,1,1,1
+acccess_salary_salary_admin,acccess.salary.salary.admin,model_salary_salary,,1,1,1,1
+
+

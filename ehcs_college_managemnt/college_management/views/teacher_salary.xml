@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="teacher_salary_form_view" model="ir.ui.view">
+		<field name="name">salary.salary.form</field>
+		<field name="model">salary.salary</field>
+		<field name="arch" type="xml">
+			<form string="Salary">
+				<header>
+				
+				</header>
+				<sheet>
+					<group>
+						<field name="name" required="1"/>
+						<field name="come_date"/>
+						<field name="go_date"/>
+						<field name="leave"/>
+						<field name="work_duration"/>
+						<field name="salary" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record id="teacher_salary_tree_view" model="ir.ui.view">
+		<field name="name">salary.salary.tree</field>
+		<field name="model">salary.salary</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<!-- <field name="salary"/> -->
+			</tree>
+		</field>
+	</record>
+
+	<record id="action_salary" model="ir.actions.act_window">
+		<field name="name">Teacher Salary</field>
+		<field name="res_model">salary.salary</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	
+</odoo>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="school_student_form_view" model="ir.ui.view">
+        <field name="name">college.student.form</field>
+        <field name="model">college.student</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <header>
+                    <button name="%(college_management.action_histoy)d"   type="action" 
+                        string="College History" class="oe_highlight" invisible="state != 'draft'" />
+
+                    <button name="coferm_button" type="object" string="Confirm"
+                        class="oe_highlight" invisible="state in ('confirm','cancel', 'done')"/>
+
+                     <button name="mark_as_done" type="object" 
+                        string="Mark as Done"  class="oe_highlight" invisible="state in ('draft', 'cancel', 'done') "/>
+
+                    <button name="cancel_button" type="object" 
+                        string="Cancel" invisible="state in ('cancel', 'done')" class="oe_highlight" />
+
+                    <button name="set_to_draft" type="object" 
+                        string="Set To Draft" invisible="state != 'cancel'" class="oe_highlight" />
+
+                    <field name="state" widget="statusbar"  
+                        options='{"clickable":"1"}' />
+                    <button name="%(college_management.report_student_t)d" type="action" 
+                        string="Print Report" class="oe_highlight"/>
+                        
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="reference" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group col="2">
+                        <group >
+                            <field name="student" readonly="1" invisible="1"/>
+                            <field name="name" widget="char_emojis" required="1"/>
+                            <field name="roll_number" />  
+                            <field name="mark" />
+                            <field name="gender" widget="radio" />
+                            <field name="course"/>                     
+                            <field name="scholrship" invisible='fees &lt; 10000'/>
+                        </group>
+                        <group>
+                            <field name="photo"/>
+                            <field name="field"/>
+                            <field name="internship" invisible="field != 't.y'" placeholder="Any internship you have"/>
+                            <field name="birth_date" />
+                            <field name="age"/>
+                            <field name="fees"/>
+                            <field name="t_id"/>
+                            <field name="subject_ids" widget="many2many_tags"/>
+                            <field name="email" placeholder="Please enter your e-mail address..." widget="email"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="add" groups="college_management.group_college_teacher"/>
+                    </group>
+                    <notebook>
+                        <page string="For office use">
+                            <group>
+                                <field name="spuid"/>
+                                <field name="grno"/>
+                                <field name="password" widget="password"  />
+                                <field name="admission"/>
+                                <field name="state" invisible="gender == 'female'"/>
+                            </group>    
+                        </page>
+                        <page string="Other Information">
+                            <group>
+                                <field name="pg"/>
+                                <field name="rent" invisible='not pg'/>
+                                <field name="job" />
+                                <field name="salary" invisible='job == False'/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="college_student_tree_view" model="ir.ui.view">
+        <field name="name">college.student.tree</field>
+        <field name="model">college.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="birth_date"/>
+                <field name="field"/>
+            </tree>            
+        </field>
+    </record>
+
+
+    
+    <record id="action_college_student" model="ir.actions.act_window">
+        <field name="name">College Management</field>
+        <field name="res_model">college.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+
+        
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="subject_form_view" model="ir.ui.view">
+		<field name="name">college.subject.form</field>
+		<field name="model">college.subject</field>
+		<field name="arch" type="xml">
+			<form name="Subjects">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" required="1"/>
+						</group>
+				</group>
+				</sheet>
+			</form>
+		</field> 
+	</record>
+
+
+
+	<record id="action_college_subject" model="ir.actions.act_window">
+        <field name="name">College subject</field>
+        <field name="res_model">college.subject</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	
+
+	   
+
+
+    
+
+
+
+
+</odoo>
+

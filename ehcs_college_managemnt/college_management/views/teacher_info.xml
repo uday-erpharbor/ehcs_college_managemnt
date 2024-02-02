@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="teacher_form_view" model="ir.ui.view">
+        <field name="name">teacher.information.form</field>
+        <field name="model">teacher.information</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <sheet>
+                    <group>
+                        <group>
+                           <field name="name" required="1" />
+                           <field name="gender"/> 
+                           <field name="partner" 
+                                  invisible='gender != "male" and gender != "female" ' 
+                                  required='gender != "other"'/>
+                           <field name="subject_id" widget="many2many_tags"/>      
+                           <field name="phd"/>
+                           <field name="year" invisible="phd != True"/>
+                           <field name="master" />         
+                        </group>
+                            <field name="progress"  widget="percentpie" />          
+                    </group>
+                    <notebook>
+                        <page string="Student's">
+                            <field name="student_ids">
+                                <tree>
+                                    <field name="name" widget="char_emojis"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                       <field name="name" widget="char_emojis"/>    
+                                    </group>
+                                </form>
+                            </field>                                 
+                        </page>
+                    </notebook>   
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_tree_view" model="ir.ui.view">
+        <field name="name">teacher.information.tree</field>
+        <field name="model">teacher.information</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    
+    <record id="action_college_teacher" model="ir.actions.act_window">
+        <field name="name">College Management</field>
+        <field name="res_model">teacher.information</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+	
+
+	   
+</odoo>
